@@ -72,8 +72,17 @@ def load_recommendations(config):
     return recommendations
 
 def add_recommendation(driver,config,rec):
-    #TODO
-    pass
+    load_student_schedule(driver,config,rec.dcid)
+    load_recommendation_page(driver,config)
+    course_number_box = driver.find_element_by_id("cnumfield")
+    course_number_box.send_keys(rec.course)
+    course_number_box.submit()
+
+def load_student_schedule(driver,config,dcid):
+    driver.get(config["HOST"] + "/teachers/studentpages/schedule.html?frn=001" + dcid)
+
+def load_recommendation_page(driver,config):
+    driver.get(config["HOST"] + "/teachers/studentpages/RecommendPTEdit.html")
 
 def close_selenium(driver):
     time.sleep(5) # Let the user actually see something!
