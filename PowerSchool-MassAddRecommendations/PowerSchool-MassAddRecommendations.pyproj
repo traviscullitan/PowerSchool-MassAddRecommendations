@@ -24,6 +24,7 @@
     <Compile Include="PowerSchool_MassAddRecommendations.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="config.ini" />
     <Content Include="config.ini.example" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
