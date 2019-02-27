@@ -12,6 +12,8 @@ import os
 
 def main():
     
+    a = 5
+
     config = import_config()
 
     driver = setup_selenium(config)
